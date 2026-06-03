@@ -1,0 +1,5 @@
+# originais pesados (mantém só os webp/mp4 comprimidos no repo)
+Body Splash/
+Kit Body Splash/
+*.zip
+.DS_Store

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Splash Hidrabene — Cheiro de perfume caro, sem cheiro de álcool</title>
+  <meta name="description" content="Body Splash Hidrabene Derma — edição limitada. Fragrâncias inspiradas nos importados, com matéria-prima que reduz a saída de álcool e fixação acima da média." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+
+  <!-- Imagem do hero (LCP) -->
+  <link rel="preload" as="image" href="./assets/images/hero-bottles.webp" fetchpriority="high" />
+
+  <!-- Fontes (carregamento assíncrono pra não bloquear o render) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Display:ital,wght@1,600&display=swap" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Display:ital,wght@1,600&display=swap" /></noscript>
+
+  <style>
+    /* ─── FALLBACKS COM MÉTRICA AJUSTADA (anti-CLS na troca de fonte) ─── */
+    @font-face { font-family:'Poppins-fallback'; src:local('Arial'); size-adjust:112.15%; ascent-override:93.62%; descent-override:31.21%; line-gap-override:0%; }
+    @font-face { font-family:'Barlow-fallback'; src:local('Arial'); size-adjust:96%; ascent-override:105%; descent-override:26%; line-gap-override:0%; }
+    @font-face { font-family:'NotoSerif-fallback'; src:local('Georgia'); size-adjust:97%; ascent-override:100%; descent-override:27%; line-gap-override:0%; }
+
+    /* ─── TOKENS ─────────────────────────────────────── */
+    :root {
+      --pink-light:#F9F6F5; --pink-soft:#FDEDF1; --pink-main:#F8D7DE; --pink-mid:#E191A0;
+      --pink-accent:#E56C91; --pink-fluor:#F50A78;
+      --dark:#1D1D1B; --gray:#A69DA2; --gray-light:#F0EDED; --white:#FFFFFF;
+      /* fragrâncias */
+      --charm:#E8A07A; --fame:#C98A3C; --velvet:#E6D2A6; --bloom:#A9C9D6;
+      --font-title:'Poppins','Poppins-fallback',sans-serif;
+      --font-body:'Barlow','Barlow-fallback',sans-serif;
+      --font-display:'Noto Serif Display','NotoSerif-fallback',serif;
+      --radius-sm:8px; --radius-md:16px; --radius-lg:40px;
+      --max-w:430px; --content-pad:24px;
+    }
+
+    /* ─── RESET ──────────────────────────────────────── */
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html { font-size:16px; -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+    body { font-family:var(--font-body); color:var(--dark); background:var(--white); max-width:var(--max-w); margin:0 auto; overflow-x:hidden; }
+    img { display:block; max-width:100%; }
+    a { color:inherit; text-decoration:none; }
+    button { cursor:pointer; font-family:var(--font-title); border:none; background:none; }
+    section { position:relative; }
+    em { font-family:var(--font-display); font-style:italic; }
+
+    .section-pad { padding:48px var(--content-pad); }
+    .section-title { font-family:var(--font-title); font-size:27px; font-weight:800; line-height:1.15; letter-spacing:-0.02em; color:var(--dark); }
+    .section-title em { color:var(--pink-accent); }
+    .lead { font-family:var(--font-body); font-size:15px; line-height:1.6; color:#5a545a; margin-top:12px; }
+
+    /* ─── CTA fluor ──────────────────────────────────── */
+    .cta-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--pink-fluor); color:var(--white); font-family:var(--font-title); font-size:15px; font-weight:700; letter-spacing:0.01em; padding:16px 26px; border-radius:var(--radius-lg); width:100%; transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 8px 24px rgba(245,10,120,0.24); }
+    .cta-primary:active { transform:translateY(1px); }
+
+    /* ─── NAV (fixa) ─────────────────────────────────── */
+    .nav { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--gray-light); }
+    .nav-logo img { width:150px; height:auto; }
+    .nav-cta { background:var(--pink-fluor); color:var(--white); font-family:var(--font-title); font-size:13px; font-weight:700; padding:10px 18px; border-radius:var(--radius-lg); }
+
+    /* ─── HERO (cabeçalho PDP com preço) ─────────────── */
+    .hero { padding:18px var(--content-pad) 4px; text-align:left; background:var(--white); }
+    .hero-media { width:100%; aspect-ratio:1/1; border-radius:var(--radius-md); overflow:hidden; margin-bottom:16px; background:var(--pink-soft); }
+    .hero-media img { width:100%; height:100%; object-fit:cover; }
+    .hero-rating { display:flex; align-items:center; gap:8px; font-family:var(--font-title); font-size:12.5px; color:var(--gray); margin-bottom:8px; }
+    .stars { color:#F5A623; letter-spacing:2px; }
+    .hero-eyebrow { font-family:var(--font-title); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--pink-mid); margin-bottom:4px; }
+    .hero h1 { font-family:var(--font-title); font-size:27px; font-weight:800; line-height:1.12; letter-spacing:-0.02em; }
+    .hero h1 em { color:var(--pink-accent); }
+    .hero-price { display:flex; align-items:baseline; flex-wrap:wrap; gap:10px; margin:12px 0 4px; }
+    .hero-price .now { font-family:var(--font-title); font-size:28px; font-weight:800; color:var(--pink-fluor); letter-spacing:-0.01em; }
+    .hero-price .old { font-family:var(--font-title); font-size:15px; color:var(--gray); text-decoration:line-through; }
+    .hero-price .save { font-family:var(--font-title); font-size:11px; font-weight:800; letter-spacing:0.04em; color:var(--white); background:var(--pink-fluor); padding:4px 9px; border-radius:6px; }
+    .hero-pricenote { font-family:var(--font-title); font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--pink-mid); margin-bottom:14px; }
+    .hero-sub { font-size:15px; line-height:1.6; color:#5a545a; margin:0 0 18px; }
+    .hero-checks { list-style:none; margin:0; }
+    .hero-checks li { display:flex; gap:10px; align-items:flex-start; font-family:var(--font-body); font-size:14.5px; line-height:1.4; color:var(--dark); margin-bottom:11px; }
+    .hero-checks svg { width:20px; height:20px; stroke:#1A8A3C; flex-shrink:0; margin-top:1px; }
+
+    /* ─── MICRO-BENEFÍCIOS ───────────────────────────── */
+    .micro { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:20px 16px; border-bottom:1px solid var(--gray-light); }
+    .micro-item { text-align:center; }
+    .micro-item svg { width:26px; height:26px; stroke:var(--pink-accent); margin:0 auto 8px; display:block; }
+    .micro-item span { font-family:var(--font-title); font-size:10.5px; font-weight:600; line-height:1.25; color:var(--dark); display:block; }
+
+    /* ─── UGC FEED ───────────────────────────────────── */
+    .ugc-head { padding:40px var(--content-pad) 12px; }
+    .ugc-scroll { display:flex; gap:12px; overflow-x:auto; padding:0 var(--content-pad) 8px; scrollbar-width:none; }
+    .ugc-scroll::-webkit-scrollbar { display:none; }
+    .ugc-card { flex:0 0 64%; aspect-ratio:9/16; border-radius:var(--radius-md); overflow:hidden; background:var(--pink-main); }
+    .ugc-card video { width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* ─── MECANISMO EM NÍVEIS ────────────────────────── */
+    .level { padding:44px var(--content-pad); }
+    .level.alt { background:var(--pink-light); }
+    .level-eyebrow { font-family:var(--font-title); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--pink-mid); }
+    .level h2 { font-family:var(--font-title); font-size:25px; font-weight:800; line-height:1.15; letter-spacing:-0.02em; margin-top:6px; }
+    .level h2 em { color:var(--pink-accent); }
+    .level-rule { width:46px; height:3px; background:var(--pink-main); border-radius:2px; margin:14px 0 18px; }
+    .level p { font-size:14.5px; line-height:1.65; color:#5a545a; margin-bottom:12px; }
+    .level p strong { color:var(--dark); }
+    .level-img { width:100%; aspect-ratio:1/1; border-radius:var(--radius-md); overflow:hidden; margin-top:20px; background:var(--pink-main); }
+    .level-img img, .level-img video { width:100%; height:100%; object-fit:cover; display:block; }
+    .callout { display:flex; gap:10px; background:var(--pink-soft); border-radius:var(--radius-sm); padding:14px 16px; margin-top:8px; }
+    .callout svg { width:20px; height:20px; stroke:var(--pink-fluor); flex-shrink:0; margin-top:1px; }
+    .callout span { font-size:13.5px; line-height:1.5; color:var(--dark); font-style:italic; }
+
+    /* ─── SHOWCASE FRAGRÂNCIAS ───────────────────────── */
+    .frags { padding:48px 0; background:var(--dark); color:var(--white); }
+    .frags .section-title, .frags .lead { color:var(--white); }
+    .frags-head { padding:0 var(--content-pad); }
+    .frags .lead { color:#cfc7cc; }
+    .frag-scroll { display:flex; gap:14px; overflow-x:auto; padding:24px var(--content-pad) 10px; scrollbar-width:none; }
+    .frag-scroll::-webkit-scrollbar { display:none; }
+    .frag-card { flex:0 0 78%; background:var(--white); border-radius:var(--radius-md); overflow:hidden; display:flex; flex-direction:column; }
+    .frag-photo { aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; background:var(--pink-soft); }
+    .frag-photo img { width:64%; height:100%; object-fit:contain; }
+    .frag-body { padding:4px 18px 22px; }
+    .frag-name { font-family:var(--font-title); font-size:19px; font-weight:800; color:var(--dark); }
+    .frag-insp { font-family:var(--font-title); font-size:12px; font-weight:600; color:var(--pink-accent); margin-bottom:10px; }
+    .frag-notes { font-size:13px; line-height:1.55; color:#5a545a; }
+    .frag-notes b { color:var(--dark); font-weight:600; }
+    .frag-tag { display:inline-block; font-family:var(--font-title); font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:4px 10px; border-radius:var(--radius-lg); margin-bottom:12px; }
+
+    /* ─── ESPECIALISTA / FUNDADORA ───────────────────── */
+    .expert { padding:48px var(--content-pad); background:var(--pink-light); }
+    .expert h2 { font-family:var(--font-title); font-size:25px; font-weight:800; line-height:1.15; letter-spacing:-0.02em; }
+    .expert h2 em { color:var(--pink-accent); }
+    .expert p { font-size:14.5px; line-height:1.65; color:#5a545a; margin-top:14px; }
+    .expert ul { list-style:none; margin:16px 0 0; }
+    .expert li { position:relative; padding-left:22px; font-size:14.5px; line-height:1.5; color:var(--dark); margin-bottom:10px; }
+    .expert li::before { content:""; position:absolute; left:0; top:7px; width:8px; height:8px; border-radius:50%; background:var(--pink-fluor); }
+    .video-ph { width:100%; aspect-ratio:3/4; border-radius:var(--radius-md); margin-top:22px; background:var(--pink-main); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+    .video-ph .play { width:64px; height:64px; border-radius:50%; background:var(--white); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.18); }
+    .video-ph .play svg { width:26px; height:26px; fill:var(--dark); margin-left:3px; }
+    .video-ph .vlabel { position:absolute; bottom:14px; left:14px; font-family:var(--font-title); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--pink-mid); background:rgba(29,29,27,0.06); padding:4px 8px; border-radius:6px; }
+
+    /* ─── STATS (ANÉIS %) ────────────────────────────── */
+    .stats { padding:48px var(--content-pad); text-align:center; }
+    .stats .lead { max-width:340px; margin-left:auto; margin-right:auto; }
+    .stat-row { display:flex; align-items:center; gap:18px; text-align:left; padding:22px 0; border-bottom:1px solid var(--gray-light); }
+    .stat-row:last-child { border-bottom:none; }
+    .ring { flex:0 0 76px; width:76px; height:76px; border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative; }
+    .ring::before { content:""; position:absolute; inset:9px; background:var(--white); border-radius:50%; }
+    .ring span { position:relative; font-family:var(--font-title); font-size:18px; font-weight:800; color:var(--dark); }
+    .stat-desc { font-size:14px; line-height:1.5; color:#5a545a; }
+    .stat-desc b { color:var(--dark); font-weight:700; }
+
+    /* ─── COMPARATIVO ────────────────────────────────── */
+    .compare { padding:48px var(--content-pad); background:var(--pink-light); }
+    .ctable { margin-top:22px; border-radius:var(--radius-md); overflow:hidden; border:1px solid var(--gray-light); background:var(--white); }
+    .ctable-row { display:grid; grid-template-columns:1.3fr 1fr 1fr; align-items:center; border-bottom:1px solid var(--gray-light); }
+    .ctable-row:last-child { border-bottom:none; }
+    .ctable-row > div { padding:13px 10px; font-family:var(--font-title); font-size:12px; line-height:1.3; }
+    .ctable-attr { font-weight:600; color:var(--dark); }
+    .ctable-head .ctable-attr { color:transparent; }
+    .ctable-us { background:var(--pink-soft); font-weight:700; color:var(--pink-accent); text-align:center; }
+    .ctable-them { color:var(--gray); text-align:center; }
+    .ctable-head > div { font-size:11px; font-weight:800; letter-spacing:0.02em; text-transform:uppercase; text-align:center; }
+    .ctable-head .ctable-us { color:var(--pink-fluor); }
+    .ck { color:#1A8A3C; font-weight:800; } .cx { color:#cbb; }
+
+    /* ─── REVIEWS (histograma) ───────────────────────── */
+    .reviews { padding:48px var(--content-pad); }
+    .rev-top { display:flex; gap:20px; align-items:center; margin-top:18px; }
+    .rev-score { font-family:var(--font-title); font-size:52px; font-weight:800; line-height:1; }
+    .rev-score .stars { font-size:15px; display:block; margin-top:4px; }
+    .rev-bars { flex:1; }
+    .rev-bar { display:flex; align-items:center; gap:8px; margin-bottom:5px; }
+    .rev-bar .rl { flex:0 0 28px; font-family:var(--font-title); font-size:11px; color:var(--gray); display:flex; align-items:center; gap:2px; }
+    .rev-bar .rl svg { width:10px; height:10px; fill:#F5A623; }
+    .rev-bar .track { flex:1; height:7px; border-radius:4px; background:var(--gray-light); overflow:hidden; }
+    .rev-bar .fill { height:100%; background:#F5A623; }
+    .rev-bar .rc { flex:0 0 40px; text-align:right; font-family:var(--font-title); font-size:11px; color:var(--gray); }
+    .rev-recommend { margin:18px 0; padding-bottom:18px; border-bottom:1px solid var(--gray-light); }
+    .rev-recommend b { font-family:var(--font-title); font-size:30px; font-weight:800; }
+    .rev-recommend span { font-size:13.5px; color:#5a545a; }
+    .rev-toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px; font-family:var(--font-title); font-size:12.5px; color:var(--gray); }
+    .rev-toolbar .pill { background:var(--pink-soft); color:var(--pink-accent); font-weight:700; padding:8px 14px; border-radius:var(--radius-sm); }
+    .rev-toolbar .write { margin-left:auto; background:var(--pink-fluor); color:var(--white); font-weight:700; padding:9px 14px; border-radius:var(--radius-sm); }
+    .rev-card { padding:18px 0; border-bottom:1px solid var(--gray-light); }
+    .rev-id { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+    .rev-avatar { width:38px; height:38px; border-radius:50%; background:var(--pink-main); display:flex; align-items:center; justify-content:center; font-family:var(--font-title); font-size:12px; font-weight:700; color:var(--dark); flex-shrink:0; }
+    .rev-name { font-family:var(--font-title); font-size:14px; font-weight:700; }
+    .rev-title { font-family:var(--font-title); font-size:15px; font-weight:700; margin:6px 0 4px; }
+    .rev-text { font-size:14px; line-height:1.55; color:#5a545a; }
+    .rev-help { font-family:var(--font-title); font-size:12px; color:var(--gray); margin-top:10px; }
+
+    /* ─── OFERTA ─────────────────────────────────────── */
+    .offer-section { background:var(--white); padding:8px 0 40px; border-bottom:1px solid var(--gray-light); }
+    .offer-head { text-align:left; padding:0 var(--content-pad); }
+    .offer-eyebrow { font-family:var(--font-title); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--pink-mid); margin-bottom:4px; }
+    /* seletor de fragrância */
+    .frag-pick { padding:18px 16px 6px; }
+    .frag-pick-label { text-align:left; font-family:var(--font-title); font-size:13.5px; font-weight:700; color:var(--dark); margin-bottom:14px; }
+    .frag-pick-label span { color:var(--pink-accent); }
+    .swatches { display:flex; justify-content:flex-start; gap:14px; flex-wrap:wrap; }
+    .stock-proof { display:flex; align-items:center; justify-content:center; gap:8px; margin:18px 16px 0; font-family:var(--font-title); font-size:13px; color:#5a545a; }
+    .stock-proof .dotgreen { width:9px; height:9px; border-radius:50%; background:#1A8A3C; flex-shrink:0; }
+    .swatch { display:flex; flex-direction:column; align-items:center; gap:7px; width:64px; }
+    .swatch .dot { width:52px; height:52px; border-radius:50%; border:2px solid var(--white); box-shadow:0 0 0 2px var(--gray-light); background-size:cover; background-position:center; transition:box-shadow .15s, border-color .15s; }
+    .swatch.selected .dot { border-color:var(--white); box-shadow:0 0 0 2px var(--pink-fluor); }
+    .swatch small { font-family:var(--font-title); font-size:10.5px; font-weight:600; line-height:1.2; text-align:center; color:var(--dark); }
+    /* kits */
+    .kit-grid { display:grid; grid-template-columns:1fr; gap:14px; padding:18px 16px 0; }
+    .kit-grid > :nth-child(1) { order:3; } .kit-grid > :nth-child(2) { order:2; } .kit-grid > :nth-child(3) { order:1; }
+    .kit-card { position:relative; display:flex; flex-direction:column; background:var(--white); border:1.5px solid var(--pink-main); border-radius:var(--radius-md); padding:16px 16px 14px; text-align:center; }
+    .kit-card.featured { border:2px solid var(--pink-fluor); box-shadow:0 12px 34px rgba(245,10,120,0.16); }
+    .kit-banner { align-self:center; background:var(--pink-fluor); color:var(--white); font-family:var(--font-title); font-size:10.5px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:var(--radius-lg); margin-bottom:12px; }
+    .kit-banner.alt { background:var(--dark); }
+    .kit-media { width:100%; max-width:220px; aspect-ratio:1/1; margin:0 auto 12px; border-radius:var(--radius-sm); overflow:hidden; background:var(--pink-light); }
+    .kit-media img { width:100%; height:100%; object-fit:contain; }
+    .kit-name { font-family:var(--font-title); font-size:20px; font-weight:800; color:var(--dark); }
+    .kit-sub { font-family:var(--font-title); font-size:13px; color:var(--gray); margin-bottom:12px; }
+    .kit-off { position:absolute; top:12px; right:12px; background:var(--pink-fluor); color:var(--white); font-family:var(--font-title); font-size:12px; font-weight:800; padding:4px 9px; border-radius:var(--radius-sm); line-height:1; }
+    .kit-unit { margin:2px 0 8px; }
+    .kit-unit-val { display:block; font-family:var(--font-title); font-size:30px; font-weight:800; color:var(--pink-fluor); letter-spacing:-0.015em; line-height:1.05; }
+    .kit-unit-val small { font-size:14px; font-weight:700; color:var(--dark); }
+    .kit-unit-was { display:block; font-family:var(--font-title); font-size:12px; color:var(--gray); margin-top:2px; }
+    .kit-price-line { display:block; font-family:var(--font-title); font-size:13.5px; color:var(--dark); margin-bottom:16px; }
+    .kit-price-line s { color:var(--gray); font-weight:500; }
+    .kit-price-line strong { font-weight:800; }
+    .kit-cta { margin-top:auto; }
+    .kit-guarantee { display:flex; align-items:center; justify-content:center; gap:6px; font-family:var(--font-title); font-size:11.5px; color:var(--gray); margin-top:10px; }
+    .kit-guarantee svg { width:13px; height:13px; flex-shrink:0; stroke:var(--pink-fluor); }
+    .ph-note { font-family:var(--font-title); font-size:10px; font-weight:700; letter-spacing:0.06em; color:var(--pink-mid); text-transform:uppercase; }
+    .seals-strip { display:flex; justify-content:center; align-items:center; gap:18px; flex-wrap:wrap; margin:28px 16px 0; }
+    .seals-strip img { height:54px; width:auto; opacity:0.9; }
+
+    /* ─── FAQ ────────────────────────────────────────── */
+    .faq-section { padding:48px var(--content-pad); }
+    .faq-item { border-bottom:1px solid var(--gray-light); }
+    .faq-question { width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 0; text-align:left; font-family:var(--font-title); font-size:15px; font-weight:600; color:var(--dark); }
+    .faq-question .ic { flex-shrink:0; width:20px; height:20px; position:relative; }
+    .faq-question .ic::before,.faq-question .ic::after { content:""; position:absolute; background:var(--pink-fluor); border-radius:2px; }
+    .faq-question .ic::before { top:9px; left:2px; right:2px; height:2px; }
+    .faq-question .ic::after { left:9px; top:2px; bottom:2px; width:2px; transition:transform .2s; }
+    .faq-item.open .faq-question .ic::after { transform:scaleY(0); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height .25s ease; }
+    .faq-answer p { font-size:14px; line-height:1.6; color:#5a545a; padding:0 0 18px; }
+    .faq-item.open .faq-answer { max-height:340px; }
+
+    /* ─── CTA FINAL ──────────────────────────────────── */
+    .final-cta { text-align:center; padding:54px var(--content-pad); background:linear-gradient(180deg,var(--white) 0%, var(--pink-soft) 100%); }
+    .final-cta h2 { font-family:var(--font-title); font-size:27px; font-weight:800; line-height:1.15; letter-spacing:-0.02em; }
+    .final-cta h2 em { color:var(--pink-accent); }
+    .final-cta p { font-size:14.5px; line-height:1.6; color:#5a545a; margin:12px 0 22px; }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    .footer { background:var(--dark); color:#cfc7cc; padding:40px var(--content-pad); text-align:center; }
+    .footer img { width:160px; margin:0 auto 18px; filter:brightness(0) invert(1); opacity:0.92; }
+    .footer p { font-size:12.5px; line-height:1.7; }
+    .footer a { color:var(--pink-mid); }
+
+    /* ─── DESKTOP ────────────────────────────────────── */
+    @media (min-width:980px) {
+      body { max-width:none; }
+      .promo { font-size:12px; }
+      .nav { padding:14px max(24px,calc((100% - 1080px)/2)); }
+      .nav-logo img { width:168px; }
+
+      /* dobra PDP — 2 colunas (imagem fixa + buy box) */
+      .pdp { padding:44px max(24px,calc((100% - 1040px)/2)) 64px; }
+      .pdp-wrap { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+      .pdp-media { position:sticky; top:88px; margin-bottom:0; max-width:480px; }
+      .pdp-info { max-width:460px; }
+      .pdp h1 { font-size:32px; }
+
+      /* seções de texto: coluna de leitura centralizada (evita linhas longas) */
+      .level, .expert, .stats, .compare, .reviews, .faq-section, .final-cta {
+        padding-left:max(24px,calc((100% - 760px)/2));
+        padding-right:max(24px,calc((100% - 760px)/2));
+      }
+      .level { padding-top:64px; padding-bottom:64px; }
+      .level-img { max-width:520px; margin-left:auto; margin-right:auto; }
+      .video-ph { max-width:420px; }
+      .stats .lead { max-width:520px; }
+      .section-title { font-size:30px; }
+
+      /* showcase: cabeçalho largo, cards compactos em carrossel */
+      .frags-head { padding-left:max(24px,calc((100% - 1040px)/2)); padding-right:max(24px,calc((100% - 1040px)/2)); }
+      .frag-scroll { padding-left:max(24px,calc((100% - 1040px)/2)); padding-right:max(24px,calc((100% - 1040px)/2)); }
+      .frag-card { flex:0 0 300px; }
+
+      /* rodapé centralizado */
+      .footer { padding-left:max(24px,calc((100% - 760px)/2)); padding-right:max(24px,calc((100% - 760px)/2)); }
+    }
+
+    /* ─── PRIMEIRA DOBRA — PDP (modelo Balls & Brains) ─── */
+    .promo { background:#2BE84A; color:var(--dark); text-align:center; font-family:var(--font-title); font-size:11.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:9px 16px; }
+    .promo b { color:var(--dark); }
+    .pdp { padding:18px var(--content-pad) 36px; }
+    .pdp-media { width:100%; aspect-ratio:1/1; border-radius:var(--radius-md); overflow:hidden; background:var(--pink-soft); margin-bottom:18px; }
+    .pdp-media img { width:100%; height:100%; object-fit:cover; }
+    .pdp-rating { display:flex; align-items:center; gap:8px; font-family:var(--font-title); font-size:12.5px; color:var(--gray); margin-bottom:8px; }
+    .pdp-eyebrow { font-family:var(--font-title); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--pink-mid); margin-bottom:4px; }
+    .pdp h1 { font-family:var(--font-title); font-size:28px; font-weight:800; line-height:1.12; letter-spacing:-0.02em; }
+    .pdp h1 em { color:var(--pink-accent); }
+    .pdp-price { display:flex; align-items:baseline; flex-wrap:wrap; gap:10px; margin:12px 0 2px; }
+    .pdp-price .now { font-family:var(--font-title); font-size:28px; font-weight:800; color:var(--pink-fluor); }
+    .pdp-price .old { font-family:var(--font-title); font-size:15px; color:var(--gray); text-decoration:line-through; }
+    .pdp-price .save { font-family:var(--font-title); font-size:11px; font-weight:800; letter-spacing:0.04em; color:#fff; background:var(--pink-fluor); padding:4px 9px; border-radius:6px; }
+    .pdp-pricenote { font-family:var(--font-title); font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--pink-mid); margin-bottom:14px; }
+    .pdp-sub { font-size:15px; line-height:1.6; color:#5a545a; margin:0 0 18px; }
+    .pdp-checks { list-style:none; margin:0 0 22px; }
+    .pdp-checks li { display:flex; gap:10px; align-items:flex-start; font-family:var(--font-body); font-size:14.5px; line-height:1.4; color:var(--dark); margin-bottom:11px; }
+    .pdp-checks svg { width:20px; height:20px; stroke:#1A8A3C; flex-shrink:0; margin-top:1px; }
+    .pick-label { font-family:var(--font-title); font-size:13px; font-weight:700; color:var(--dark); margin-bottom:12px; }
+    .pick-label span { color:var(--pink-accent); }
+    .fragrow { margin-bottom:22px; }
+    .bundle { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:4px; }
+    .bundle-card { position:relative; min-width:0; border:1.5px solid var(--gray-light); border-radius:var(--radius-md); padding:16px 4px 12px; text-align:center; cursor:pointer; background:var(--white); transition:border-color .15s, box-shadow .15s; }
+    .bundle-card.selected { border-color:var(--pink-fluor); box-shadow:0 6px 20px rgba(245,10,120,0.14); }
+    .bundle-save { position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--pink-fluor); color:#fff; font-family:var(--font-title); font-size:9.5px; font-weight:800; letter-spacing:0.03em; padding:3px 8px; border-radius:20px; white-space:nowrap; }
+    .bundle-img { width:48px; height:48px; margin:4px auto 8px; object-fit:contain; }
+    .bundle-qty { display:block; font-family:var(--font-title); font-size:14px; font-weight:800; color:var(--dark); }
+    .bundle-old { display:block; font-family:var(--font-title); font-size:11px; color:var(--gray); text-decoration:line-through; margin-top:4px; }
+    .bundle-now { display:block; font-family:var(--font-title); font-size:13px; font-weight:800; color:var(--pink-fluor); }
+    .bundle-unit { display:block; font-family:var(--font-title); font-size:10px; color:var(--gray); }
+    .buy-cta { margin-top:16px; }
+    .stock { display:flex; align-items:center; justify-content:center; gap:8px; margin:14px 0 0; font-family:var(--font-title); font-size:12.5px; color:#5a545a; }
+    .stock .dotgreen { width:9px; height:9px; border-radius:50%; background:#1A8A3C; flex-shrink:0; }
+    .perks { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:24px; padding-top:22px; border-top:1px solid var(--gray-light); }
+    .perk { text-align:center; }
+    .perk svg { width:27px; height:27px; stroke:var(--pink-accent); margin:0 auto 8px; display:block; }
+    .perk span { font-family:var(--font-title); font-size:10.5px; font-weight:600; line-height:1.25; display:block; color:var(--dark); }
+    .acc-wrap { margin-top:22px; }
+    .acc { border-top:1px solid var(--gray-light); }
+    .acc:last-of-type { border-bottom:1px solid var(--gray-light); }
+    .acc summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:10px; padding:16px 0; font-family:var(--font-title); font-size:14.5px; font-weight:600; color:var(--dark); }
+    .acc summary::-webkit-details-marker { display:none; }
+    .acc summary svg { width:20px; height:20px; stroke:var(--pink-accent); flex-shrink:0; }
+    .acc .chev { margin-left:auto; color:var(--pink-fluor); font-weight:800; transition:transform .2s; }
+    .acc[open] .chev { transform:rotate(90deg); }
+    .acc .acc-body { font-size:14px; line-height:1.6; color:#5a545a; padding:0 0 16px; }
+    .pdp .seals-strip { margin-top:24px; }
+  </style>
+</head>
+<body>
+
+  <!-- ░░ BARRA DE OFERTA ░░ -->
+  <div class="promo">Edição limitada: <b>estoque saindo rápido</b></div>
+
+  <!-- ░░ NAV ░░ -->
+  <nav class="nav" aria-label="Navegação principal">
+    <div class="nav-logo" aria-label="Hidrabene"><img src="./assets/brand/logo-hidrabene-nav.webp" alt="Hidrabene" width="150" height="25" /></div>
+    <button class="nav-cta" onclick="irParaOferta()">Comprar agora</button>
+  </nav>
+
+  <!-- ░░ PRIMEIRA DOBRA — PDP (modelo Balls & Brains) ░░ -->
+  <header class="pdp" id="oferta" aria-label="Body Splash Hidrabene">
+    <div class="pdp-wrap">
+      <div class="pdp-media">
+        <img id="heroImg" src="./assets/images/hero-bottles.webp" alt="Linha Body Splash Hidrabene — as quatro fragrâncias" width="673" height="673" fetchpriority="high" />
+      </div>
+      <div class="pdp-info">
+        <p class="pdp-rating"><span class="stars" aria-label="4.8 de 5">★★★★★</span> 4.8/5 · 1.847 avaliações</p>
+        <p class="pdp-eyebrow">Edição limitada</p>
+        <h1>Body Splash <em>Hidrabene</em></h1>
+        <div class="pdp-price"><span class="now">R$ XX,XX</span><span class="old">R$ XX,XX</span><span class="save">Economize XX%</span></div>
+        <p class="pdp-pricenote">Preço em breve</p>
+        <p class="pdp-sub">Cheiro de perfume caro, sem aquele estouro de álcool — e com fixação acima da média de um body splash. Inspirações fiéis aos importados que você ama.</p>
+        <ul class="pdp-checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Você sente a fragrância na primeira borrifada, sem cheiro de álcool</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Inspirações fiéis aos importados (My Way, Fame, Bare Vanilla)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Fixação acima da média de um body splash</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Dermatologicamente testado · cruelty free e vegano</li>
+        </ul>
+
+        <!-- 1. fragrância -->
+        <p class="pick-label">1. Escolha a fragrância: <span id="fragChosen">selecione</span></p>
+        <div class="fragrow swatches" role="group" aria-label="Escolha a fragrância">
+          <button class="swatch" data-frag="Charm Way" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-charmway.webp')"></span><small>Charm Way</small></button>
+          <button class="swatch" data-frag="Iconic Fame" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-fame.webp')"></span><small>Iconic Fame</small></button>
+          <button class="swatch" data-frag="Velvet Vanilla" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-velvet.webp')"></span><small>Velvet Vanilla</small></button>
+          <button class="swatch" data-frag="Fine Bloom" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-bloom.webp')"></span><small>Fine Bloom</small></button>
+        </div>
+
+        <!-- 2. kit (bundle compacto, selecionável) -->
+        <p class="pick-label">2. Escolha o kit</p>
+        <div class="bundle" role="group" aria-label="Escolha o kit">
+          <button class="bundle-card" data-kit="1-unidade" onclick="selKit(this)">
+            <span class="bundle-save">-XX%</span>
+            <img class="bundle-img" src="./assets/images/mockup-charmway.webp" alt="" width="48" height="48" loading="lazy" />
+            <span class="bundle-qty">1 un</span>
+            <span class="bundle-old">R$ XX,XX</span><span class="bundle-now">R$ XX,XX</span><span class="bundle-unit">por unidade</span>
+          </button>
+          <button class="bundle-card" data-kit="2-unidades" onclick="selKit(this)">
+            <span class="bundle-save">-XX%</span>
+            <img class="bundle-img" src="./assets/images/mockup-velvet.webp" alt="" width="48" height="48" loading="lazy" />
+            <span class="bundle-qty">2 un</span>
+            <span class="bundle-old">R$ XX,XX</span><span class="bundle-now">R$ XX,XX</span><span class="bundle-unit">/un</span>
+          </button>
+          <button class="bundle-card selected" data-kit="3-unidades" onclick="selKit(this)" aria-pressed="true">
+            <span class="bundle-save">-XX%</span>
+            <img class="bundle-img" src="./assets/images/mockup-fame.webp" alt="" width="48" height="48" loading="lazy" />
+            <span class="bundle-qty">3 un</span>
+            <span class="bundle-old">R$ XX,XX</span><span class="bundle-now">R$ XX,XX</span><span class="bundle-unit">/un</span>
+          </button>
+        </div>
+
+        <button class="cta-primary buy-cta" onclick="comprarAgora()">Comprar agora</button>
+        <p class="stock"><span class="dotgreen"></span> Edição limitada — fragrâncias que saem rápido</p>
+
+        <!-- benefícios -->
+        <div class="perks" role="list">
+          <div class="perk" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s5 5 5 9a5 5 0 0 1-10 0c0-4 5-9 5-9z"/><path d="M4 4l16 16"/></svg><span>Sem estouro de álcool</span></div>
+          <div class="perk" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg><span>Inspiração fiel</span></div>
+          <div class="perk" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5 8a7 7 0 0 0 14 0"/><path d="M5 8h14"/><path d="M9 22h6"/><path d="M12 14v8"/></svg><span>Fixação acima da média</span></div>
+          <div class="perk" role="listitem"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span>Derma testado</span></div>
+        </div>
+
+        <!-- accordions -->
+        <div class="acc-wrap">
+          <details class="acc">
+            <summary><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h13v10H1z"/><path d="M14 6h4l3 3v4h-7z"/><circle cx="5.5" cy="17" r="1.8"/><circle cx="17.5" cy="17" r="1.8"/></svg> Entrega e frete <span class="chev">›</span></summary>
+            <div class="acc-body">Enviamos para todo o Brasil. O prazo e o valor do frete aparecem no checkout, de acordo com o seu CEP.</div>
+          </details>
+          <details class="acc">
+            <summary><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg> Garantia de 7 dias <span class="chev">›</span></summary>
+            <div class="acc-body">Não curtiu? Você tem 7 dias após o recebimento para solicitar a devolução. Sem complicação.</div>
+          </details>
+        </div>
+
+        <!-- selos -->
+        <div class="seals-strip" role="list" aria-label="Certificações da marca">
+          <img src="./assets/brand/selo-cruelty-free-vegan.webp" alt="Cruelty free e vegano" loading="lazy" />
+          <img src="./assets/brand/selo-derm-testado.webp" alt="Dermatologicamente testado" loading="lazy" />
+          <img src="./assets/brand/selo-im-green.webp" alt="I'm green — plástico de origem vegetal" loading="lazy" />
+          <img src="./assets/brand/selo-industria-brasileira.webp" alt="Indústria brasileira" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ░░ MECANISMO — NÍVEL 1 ░░ -->
+  <section class="level" aria-label="Sem cheiro de álcool">
+    <h2>Você sente a fragrância, <em>não o álcool</em>.</h2>
+    <div class="level-rule"></div>
+    <p><strong>O problema:</strong> a maioria dos body splashes te entrega álcool primeiro. Aquele estouro que arde no nariz e só depois deixa um cheirinho fraco que some em minutos.</p>
+    <p><strong>O que a gente faz diferente:</strong> usamos uma matéria-prima que reduz a saída alcoólica da fórmula. Resultado: a fragrância de verdade aparece já na primeira borrifada, do jeito que foi desenhada pra cheirar.</p>
+    <div class="callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+      <span>Borrifa e já vem o cheiro certo — sem aquele "tapa" de álcool na frente.</span>
+    </div>
+    <div class="level-img"><video class="vid-inview" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="./assets/images/poster-dicas.webp"><source src="./assets/video/dicas.mp4" type="video/mp4" /></video></div>
+  </section>
+
+  <!-- ░░ MECANISMO — NÍVEL 2 ░░ -->
+  <section class="level alt" aria-label="Inspiração fiel aos importados">
+    <h2>Tão fiel que <em>confundem</em> com o importado.</h2>
+    <div class="level-rule"></div>
+    <p><strong>A ideia:</strong> recriar a assinatura olfativa dos perfumes que todo mundo ama — sem o preço de importado. Não é "lembra um pouco". É aquele momento de "peraí, isso é igual".</p>
+    <p>As inspirações da linha:</p>
+    <p style="margin-bottom:6px;">• <strong>Charm Way</strong> — inspiração em My Way, da Giorgio Armani</p>
+    <p style="margin-bottom:6px;">• <strong>Iconic Fame</strong> — inspiração em Fame, da Paco Rabanne</p>
+    <p style="margin-bottom:6px;">• <strong>Velvet Vanilla</strong> — inspiração em Bare Vanilla, da Victoria's Secret</p>
+    <p>• <strong>Fine Bloom</strong> — fragrância 100% autoral e exclusiva Hidrabene</p>
+    <div class="callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg>
+      <span>Inspiração fiel, no seu bolso — pra reaplicar quando quiser, sem dó.</span>
+    </div>
+  </section>
+
+  <!-- ░░ MECANISMO — NÍVEL 3 ░░ -->
+  <section class="level" aria-label="Fixação acima da média">
+    <h2>Fixação que body splash <em>não costuma ter</em>.</h2>
+    <div class="level-rule"></div>
+    <p><strong>O de sempre:</strong> body splash bom é aquele que dura, né? O problema é que quase todos somem rápido — você reaplica o tempo todo e ainda fica na dúvida se sobrou cheiro.</p>
+    <p><strong>Aqui:</strong> a fórmula foi pensada pra ter fixação acima da média de um body splash. O cheiro permanece na pele e na roupa por muito mais tempo do que você espera de um produto dessa categoria.</p>
+    <div class="callout">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5 8a7 7 0 0 0 14 0"/><path d="M5 8h14"/></svg>
+      <span>Continua sentindo o cheiro horas depois — na pele e na roupa.</span>
+    </div>
+  </section>
+
+  <!-- ░░ SHOWCASE FRAGRÂNCIAS ░░ -->
+  <section class="frags" aria-label="As fragrâncias">
+    <div class="frags-head">
+      <h2 class="section-title">Escolha o seu <em>cheiro</em></h2>
+      <p class="lead">Quatro fragrâncias, quatro personalidades. Todas com a mesma fórmula que reduz o álcool e fixa acima da média.</p>
+    </div>
+    <div class="frag-scroll" role="list">
+      <div class="frag-card" role="listitem">
+        <div class="frag-photo"><img src="./assets/images/mockup-charmway.webp" alt="Body Splash Charm Way" width="900" height="900" loading="lazy" /></div>
+        <div class="frag-body">
+          <span class="frag-tag" style="background:var(--charm);color:#5a2e16;">Floral · Cítrico · Amadeirado</span>
+          <p class="frag-name">Charm Way</p>
+          <p class="frag-insp">Inspiração: My Way (Giorgio Armani)</p>
+          <p class="frag-notes"><b>Acordes:</b> bergamota, flor de laranjeira, jasmim e cedro. Sofisticado, feminino e elegante.</p>
+        </div>
+      </div>
+      <div class="frag-card" role="listitem">
+        <div class="frag-photo"><img src="./assets/images/mockup-fame.webp" alt="Body Splash Iconic Fame" width="900" height="900" loading="lazy" /></div>
+        <div class="frag-body">
+          <span class="frag-tag" style="background:var(--fame);color:#fff;">Floral · Frutal · Ambarado</span>
+          <p class="frag-name">Iconic Fame</p>
+          <p class="frag-insp">Inspiração: Fame (Paco Rabanne)</p>
+          <p class="frag-notes"><b>Acordes:</b> manga, bergamota, jasmim, baunilha e sândalo. Doce sensual que chama atenção.</p>
+        </div>
+      </div>
+      <div class="frag-card" role="listitem">
+        <div class="frag-photo"><img src="./assets/images/mockup-velvet.webp" alt="Body Splash Velvet Vanilla" width="900" height="900" loading="lazy" /></div>
+        <div class="frag-body">
+          <span class="frag-tag" style="background:var(--velvet);color:#5a4a1e;">Gourmand · Baunilha</span>
+          <p class="frag-name">Velvet Vanilla</p>
+          <p class="frag-insp">Inspiração: Bare Vanilla (Victoria's Secret)</p>
+          <p class="frag-notes"><b>Acordes:</b> creme de baunilha, açúcar mascavo e musk. O doce mais aconchegante e viciante da linha.</p>
+        </div>
+      </div>
+      <div class="frag-card" role="listitem">
+        <div class="frag-photo"><img src="./assets/images/mockup-bloom.webp" alt="Body Splash Fine Bloom" width="900" height="900" loading="lazy" /></div>
+        <div class="frag-body">
+          <span class="frag-tag" style="background:var(--bloom);color:#1e4250;">Floral Aquático</span>
+          <p class="frag-name">Fine Bloom</p>
+          <p class="frag-insp">Fragrância autoral exclusiva</p>
+          <p class="frag-notes"><b>Acordes:</b> pera, jasmim, pétalas delicadas e cedro branco. Frescor de "saída de banho de rica", zero doce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ STATS ░░ -->
+  <section class="stats" aria-label="O que dizem quem testou">
+    <h2 class="section-title">O que dizem <em>quem testou</em></h2>
+    <p class="lead">Em testes com consumidoras da linha Body Splash, a resposta foi quase unânime: <span class="ph-note">(amostra ilustrativa — números reais a confirmar)</span></p>
+    <div class="stat-row">
+      <div class="ring" style="background:conic-gradient(var(--pink-fluor) 0% 94%, var(--gray-light) 94% 100%);"><span>94%</span></div>
+      <p class="stat-desc">disseram que a fragrância é <b>muito parecida com a inspiração importada</b>.</p>
+    </div>
+    <div class="stat-row">
+      <div class="ring" style="background:conic-gradient(var(--pink-fluor) 0% 91%, var(--gray-light) 91% 100%);"><span>91%</span></div>
+      <p class="stat-desc">notaram <b>ausência do cheiro de álcool</b> logo na primeira borrifada.</p>
+    </div>
+    <div class="stat-row">
+      <div class="ring" style="background:conic-gradient(var(--pink-fluor) 0% 88%, var(--gray-light) 88% 100%);"><span>88%</span></div>
+      <p class="stat-desc">acharam a <b>fixação melhor</b> que a dos body splashes que já usaram.</p>
+    </div>
+    <div class="stat-row">
+      <div class="ring" style="background:conic-gradient(var(--pink-fluor) 0% 96%, var(--gray-light) 96% 100%);"><span>96%</span></div>
+      <p class="stat-desc"><b>comprariam de novo</b> e indicariam pra uma amiga.</p>
+    </div>
+  </section>
+
+  <!-- ░░ COMPARATIVO ░░ -->
+  <section class="compare" aria-label="Comparativo">
+    <h2 class="section-title">Por que ele <em>ganha</em> do body splash comum</h2>
+    <div class="ctable" role="table">
+      <div class="ctable-row ctable-head" role="row">
+        <div class="ctable-attr">.</div>
+        <div class="ctable-us">Hidrabene</div>
+        <div class="ctable-them">Comum</div>
+      </div>
+      <div class="ctable-row" role="row">
+        <div class="ctable-attr">Cheiro de álcool ao borrifar</div>
+        <div class="ctable-us"><span class="ck">Reduzido</span></div>
+        <div class="ctable-them">Forte</div>
+      </div>
+      <div class="ctable-row" role="row">
+        <div class="ctable-attr">Fidelidade à inspiração</div>
+        <div class="ctable-us"><span class="ck">Alta</span></div>
+        <div class="ctable-them">Genérica</div>
+      </div>
+      <div class="ctable-row" role="row">
+        <div class="ctable-attr">Fixação na pele e roupa</div>
+        <div class="ctable-us"><span class="ck">Acima da média</span></div>
+        <div class="ctable-them">Some rápido</div>
+      </div>
+      <div class="ctable-row" role="row">
+        <div class="ctable-attr">Dermatologicamente testado</div>
+        <div class="ctable-us"><span class="ck">Sim</span></div>
+        <div class="ctable-them"><span class="cx">Nem sempre</span></div>
+      </div>
+      <div class="ctable-row" role="row">
+        <div class="ctable-attr">Preço</div>
+        <div class="ctable-us"><span class="ck">De body splash</span></div>
+        <div class="ctable-them">De body splash</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ ESPECIALISTA / MARCA ░░ -->
+  <section class="expert" aria-label="Sobre a fórmula">
+    <h2>Por que a <em>Hidrabene</em> conseguiu chegar nesse cheiro</h2>
+    <p>A Hidrabene Derma desenvolve dermocosméticos há anos, com formulação própria e controle de qualidade. O Body Splash nasceu de um pedido simples das clientes: "quero o cheiro do importado, mas sem o preço e sem o álcool".</p>
+    <p>Nesse vídeo, a gente mostra:</p>
+    <ul>
+      <li>Como a matéria-prima reduz a saída alcoólica da fórmula</li>
+      <li>Por que as inspirações ficaram tão fiéis aos originais</li>
+      <li>O segredo da fixação acima da média num body splash</li>
+    </ul>
+    <div class="video-ph" role="img" aria-label="Vídeo em breve">
+      <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <span class="vlabel">Vídeo — em breve</span>
+    </div>
+  </section>
+
+  <!-- ░░ REVIEWS ░░ -->
+  <section class="reviews" aria-label="Avaliações">
+    <h2 class="section-title">Avaliações de quem <em>já borrifou</em></h2>
+    <div class="rev-top">
+      <div class="rev-score">4.8<span class="stars" aria-label="4.8 de 5">★★★★★</span></div>
+      <div class="rev-bars">
+        <div class="rev-bar"><span class="rl">5<svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg></span><span class="track"><span class="fill" style="width:88%"></span></span><span class="rc">1.643</span></div>
+        <div class="rev-bar"><span class="rl">4<svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg></span><span class="track"><span class="fill" style="width:9%"></span></span><span class="rc">148</span></div>
+        <div class="rev-bar"><span class="rl">3<svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg></span><span class="track"><span class="fill" style="width:3%"></span></span><span class="rc">37</span></div>
+        <div class="rev-bar"><span class="rl">2<svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg></span><span class="track"><span class="fill" style="width:1%"></span></span><span class="rc">11</span></div>
+        <div class="rev-bar"><span class="rl">1<svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 21l-5-2.8 1-5.5-4-3.9 5.5-.8z"/></svg></span><span class="track"><span class="fill" style="width:1%"></span></span><span class="rc">8</span></div>
+      </div>
+    </div>
+    <div class="rev-recommend"><b>96%</b> <span>recomendariam para uma amiga</span></div>
+    <div class="rev-toolbar"><span class="pill">Filtros</span><span>1.847 avaliações</span><span style="margin-left:auto;">Ordenar ▾</span></div>
+    <div class="rev-card">
+      <div class="rev-id"><div class="rev-avatar">JU</div><div class="rev-name">Juliana R.</div></div>
+      <span class="stars" aria-label="5 estrelas">★★★★★</span>
+      <p class="rev-title">Não vem cheiro de álcool mesmo</p>
+      <p class="rev-text">Comprei o Charm Way meio sem fé e me surpreendi. Borrifa e já vem o cheiro bom, nada de álcool ardendo. Recebo elogio o dia todo. <span style="color:var(--pink-accent);font-family:var(--font-title);font-weight:600;">Ler mais</span></p>
+      <p class="rev-help">Isto foi útil? &nbsp;👍 142 &nbsp; 👎 0</p>
+    </div>
+    <div class="rev-card">
+      <div class="rev-id"><div class="rev-avatar">CA</div><div class="rev-name">Camila S.</div></div>
+      <span class="stars" aria-label="5 estrelas">★★★★★</span>
+      <p class="rev-title">Idêntico ao My Way</p>
+      <p class="rev-text">Tenho o original e juro que fica difícil diferenciar nas primeiras horas. Pelo preço de um body splash, virou meu "perfume de bolsa" pra reaplicar. <span style="color:var(--pink-accent);font-family:var(--font-title);font-weight:600;">Ler mais</span></p>
+      <p class="rev-help">Isto foi útil? &nbsp;👍 89 &nbsp; 👎 0</p>
+    </div>
+  </section>
+
+  <!-- ░░ FAQ ░░ -->
+  <section class="faq-section" aria-label="Perguntas frequentes">
+    <h2 class="section-title" style="margin-bottom:8px;">Perguntas <em>frequentes</em></h2>
+    <div class="faq-item open">
+      <button class="faq-question" aria-expanded="true" onclick="toggleFaq(this)">É igual ao perfume importado? <span class="ic"></span></button>
+      <div class="faq-answer"><p>É um body splash com fragrância <strong>inspirada</strong> nos importados — não é o perfume original. A fidelidade é alta: muita gente que testa diz que é difícil diferenciar. Mas é um desodorante colônia, com a proposta (e o preço) de um body splash.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Por que não tem aquele cheiro de álcool? <span class="ic"></span></button>
+      <div class="faq-answer"><p>A fórmula usa uma matéria-prima que reduz a saída alcoólica. Por isso você sente a fragrância logo na primeira borrifada, em vez do "estouro" de álcool que os body splashes comuns costumam ter.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Quanto tempo a fragrância dura? <span class="ic"></span></button>
+      <div class="faq-answer"><p>A fixação é acima da média de um body splash — fica na pele e na roupa por bem mais tempo do que o normal da categoria. A duração varia de pele pra pele, então é normal reaplicar ao longo do dia se quiser manter sempre marcante.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Posso usar todo dia? <span class="ic"></span></button>
+      <div class="faq-answer"><p>Pode. É um desodorante colônia dermatologicamente testado, pensado pro dia a dia e também pra sair. Tamanho de 200ml, perfeito pra deixar na bolsa e reaplicar.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">Qual fragrância eu escolho? <span class="ic"></span></button>
+      <div class="faq-answer"><p>Charm Way (floral elegante, inspiração My Way), Iconic Fame (doce sensual, inspiração Fame), Velvet Vanilla (baunilha aconchegante) e Fine Bloom (floral aquático fresco e autoral). Na dúvida, o kit com 2 ou 3 deixa você experimentar mais de uma.</p></div>
+    </div>
+  </section>
+
+  <!-- ░░ CTA FINAL ░░ -->
+  <section class="final-cta" aria-label="Comprar agora">
+    <h2>Borrifa uma vez e <em>você entende</em>.</h2>
+    <p>Edição limitada. Escolha sua fragrância e sinta a diferença já na primeira borrifada.</p>
+    <button class="cta-primary" onclick="irParaOferta()">Escolher minha fragrância</button>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <img src="./assets/brand/logo-hidrabene-nav.webp" alt="Hidrabene" width="150" height="25" loading="lazy" />
+    <p>Body Splash Desodorante Colônia · Edição limitada · 200ml<br>Ainda com dúvida? Fale com a gente: <a href="#">@hidrabene</a></p>
+  </footer>
+
+  <script>
+    // Rolagem suave até a oferta
+    function irParaOferta(){ document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); }
+
+    // Seleção de fragrância
+    var fragSelecionada = null;
+    (function(){
+      var chosen = document.getElementById('fragChosen');
+      var heroImg = document.getElementById('heroImg');
+      var fragImg = { 'Charm Way':'charmway', 'Iconic Fame':'fame', 'Velvet Vanilla':'velvet', 'Fine Bloom':'bloom' };
+      document.querySelectorAll('.swatch').forEach(function(b){
+        b.addEventListener('click', function(){
+          document.querySelectorAll('.swatch').forEach(function(x){ x.classList.remove('selected'); x.setAttribute('aria-pressed','false'); });
+          b.classList.add('selected'); b.setAttribute('aria-pressed','true');
+          fragSelecionada = b.dataset.frag;
+          if(chosen){ chosen.textContent = fragSelecionada; chosen.style.color = 'var(--pink-accent)'; }
+          if(heroImg && fragImg[fragSelecionada]){
+            heroImg.src = './assets/images/frag-' + fragImg[fragSelecionada] + '.webp';
+            heroImg.alt = 'Body Splash Hidrabene ' + fragSelecionada;
+          }
+        });
+      });
+    })();
+
+    // Seleção de kit (bundle)
+    var kitSelecionado = '3-unidades';
+    function selKit(btn){
+      document.querySelectorAll('.bundle-card').forEach(function(x){ x.classList.remove('selected'); x.setAttribute('aria-pressed','false'); });
+      btn.classList.add('selected'); btn.setAttribute('aria-pressed','true');
+      kitSelecionado = btn.dataset.kit;
+    }
+
+    // Checkout — colar o link em CHECKOUT_URL quando tiver
+    var CHECKOUT_URL = ''; // ex: 'https://checkout.hidrabene.com.br/body-splash'
+    function comprarAgora(){
+      if(!fragSelecionada){
+        document.querySelector('.fragrow').scrollIntoView({behavior:'smooth', block:'center'});
+        alert('Escolha primeiro a fragrância do seu Body Splash.');
+        return;
+      }
+      if(CHECKOUT_URL){
+        var sep = CHECKOUT_URL.includes('?') ? '&' : '?';
+        window.location.href = CHECKOUT_URL + sep + 'kit=' + encodeURIComponent(kitSelecionado) + '&fragrancia=' + encodeURIComponent(fragSelecionada);
+        return;
+      }
+      alert('Body Splash Hidrabene\nFragrância: ' + fragSelecionada + '\nKit: ' + kitSelecionado + '\n\nO link do checkout será configurado em CHECKOUT_URL.');
+    }
+
+        // FAQ accordion
+    function toggleFaq(btn){
+      var item = btn.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); el.querySelector('.faq-question').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    }
+
+    // Autoplay de vídeos só quando visíveis. iOS exige muted de fato antes do play.
+    (function(){
+      var vids = document.querySelectorAll('.ugc-video, .vid-inview');
+      if(!vids.length) return;
+      function tryPlay(v){
+        if(!v.dataset.userSound){ v.muted = true; v.defaultMuted = true; }
+        var p = v.play();
+        if(p && p.catch) p.catch(function(){ try { v.load(); v.play().catch(function(){}); } catch(e){} });
+      }
+      if(!('IntersectionObserver' in window)){ vids.forEach(tryPlay); return; }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting) tryPlay(e.target); else e.target.pause(); });
+      }, { threshold:0.25 });
+      vids.forEach(function(v){ io.observe(v); });
+    })();
+  </script>
+</body>
+</html>
