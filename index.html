@@ -111,34 +111,25 @@
     .callout span { font-size:13.5px; line-height:1.5; color:var(--dark); font-style:italic; }
 
     /* ─── SHOWCASE FRAGRÂNCIAS ───────────────────────── */
-    .frags { padding:48px 0; background:var(--dark); color:var(--white); }
-    .frags .section-title, .frags .lead { color:var(--white); }
+    .frags { padding:48px 0; background:var(--pink-light); color:var(--dark); }
     .frags-head { padding:0 var(--content-pad); }
-    .frags .lead { color:#cfc7cc; }
-    .frag-scroll { display:flex; gap:14px; overflow-x:auto; padding:24px var(--content-pad) 10px; scrollbar-width:none; }
+    .frags .section-title { color:var(--dark); }
+    .frags .lead { color:#5a545a; }
+    .frag-scroll { display:flex; gap:16px; overflow-x:auto; padding:24px var(--content-pad) 14px; scrollbar-width:none; scroll-snap-type:x mandatory; }
     .frag-scroll::-webkit-scrollbar { display:none; }
-    .frag-card { flex:0 0 78%; background:var(--white); border-radius:var(--radius-md); overflow:hidden; display:flex; flex-direction:column; }
-    .frag-photo { aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; background:var(--pink-soft); }
-    .frag-photo img { width:64%; height:100%; object-fit:contain; }
-    .frag-body { padding:4px 18px 22px; }
-    .frag-name { font-family:var(--font-title); font-size:19px; font-weight:800; color:var(--dark); }
+    .frag-card { flex:0 0 76%; scroll-snap-align:center; background:var(--white); border-radius:var(--radius-md); overflow:hidden; display:flex; flex-direction:column; box-shadow:0 12px 32px rgba(29,29,27,0.10); --fc:var(--pink-main); }
+    .frag-photo { aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; position:relative; background:linear-gradient(160deg, color-mix(in srgb,var(--fc) 42%,#fff) 0%, color-mix(in srgb,var(--fc) 14%,#fff) 100%); }
+    .frag-photo img { width:auto; height:84%; max-width:60%; object-fit:contain; filter:drop-shadow(0 14px 22px rgba(0,0,0,0.18)); }
+    .frag-color-dot { position:absolute; top:12px; left:12px; width:20px; height:20px; border-radius:50%; background:var(--fc); box-shadow:0 0 0 3px rgba(255,255,255,0.75); }
+    .frag-body { padding:16px 18px 20px; display:flex; flex-direction:column; flex:1; }
+    .frag-name { font-family:var(--font-title); font-size:20px; font-weight:800; color:var(--dark); }
     .frag-insp { font-family:var(--font-title); font-size:12px; font-weight:600; color:var(--pink-accent); margin-bottom:10px; }
     .frag-notes { font-size:13px; line-height:1.55; color:#5a545a; }
     .frag-notes b { color:var(--dark); font-weight:600; }
-    .frag-tag { display:inline-block; font-family:var(--font-title); font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:4px 10px; border-radius:var(--radius-lg); margin-bottom:12px; }
-
-    /* ─── ESPECIALISTA / FUNDADORA ───────────────────── */
-    .expert { padding:48px var(--content-pad); background:var(--pink-light); }
-    .expert h2 { font-family:var(--font-title); font-size:25px; font-weight:800; line-height:1.15; letter-spacing:-0.02em; }
-    .expert h2 em { color:var(--pink-accent); }
-    .expert p { font-size:14.5px; line-height:1.65; color:#5a545a; margin-top:14px; }
-    .expert ul { list-style:none; margin:16px 0 0; }
-    .expert li { position:relative; padding-left:22px; font-size:14.5px; line-height:1.5; color:var(--dark); margin-bottom:10px; }
-    .expert li::before { content:""; position:absolute; left:0; top:7px; width:8px; height:8px; border-radius:50%; background:var(--pink-fluor); }
-    .video-ph { width:100%; aspect-ratio:3/4; border-radius:var(--radius-md); margin-top:22px; background:var(--pink-main); position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-    .video-ph .play { width:64px; height:64px; border-radius:50%; background:var(--white); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.18); }
-    .video-ph .play svg { width:26px; height:26px; fill:var(--dark); margin-left:3px; }
-    .video-ph .vlabel { position:absolute; bottom:14px; left:14px; font-family:var(--font-title); font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--pink-mid); background:rgba(29,29,27,0.06); padding:4px 8px; border-radius:6px; }
+    .frag-tag { display:inline-block; align-self:flex-start; font-family:var(--font-title); font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:4px 10px; border-radius:var(--radius-lg); margin-bottom:12px; }
+    .frag-cta { display:inline-flex; align-self:flex-start; align-items:center; gap:7px; margin-top:16px; background:var(--pink-fluor); color:#fff; font-family:var(--font-title); font-size:13px; font-weight:700; padding:10px 18px; border-radius:var(--radius-lg); box-shadow:0 6px 16px rgba(245,10,120,0.24); transition:transform .15s ease; }
+    .frag-cta:active { transform:translateY(1px); }
+    .frag-cta svg { width:14px; height:14px; stroke:#fff; }
 
     /* ─── STATS (ANÉIS %) ────────────────────────────── */
     .stats { padding:48px var(--content-pad); text-align:center; }
@@ -272,13 +263,12 @@
       .pdp h1 { font-size:32px; }
 
       /* seções de texto: coluna de leitura centralizada (evita linhas longas) */
-      .level, .expert, .stats, .compare, .reviews, .faq-section, .final-cta {
+      .level, .stats, .compare, .reviews, .faq-section, .final-cta {
         padding-left:max(24px,calc((100% - 760px)/2));
         padding-right:max(24px,calc((100% - 760px)/2));
       }
       .level { padding-top:64px; padding-bottom:64px; }
       .level-img { max-width:520px; margin-left:auto; margin-right:auto; }
-      .video-ph { max-width:420px; }
       .stats .lead { max-width:520px; }
       .section-title { font-size:30px; }
 
@@ -312,16 +302,27 @@
     .pdp-checks svg { width:20px; height:20px; stroke:#1A8A3C; flex-shrink:0; margin-top:1px; }
     .pick-label { font-family:var(--font-title); font-size:13px; font-weight:700; color:var(--dark); margin-bottom:12px; }
     .pick-label span { color:var(--pink-accent); }
-    .fragrow { margin-bottom:22px; }
-    .bundle { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:4px; }
-    .bundle-card { position:relative; min-width:0; border:1.5px solid var(--gray-light); border-radius:var(--radius-md); padding:16px 4px 12px; text-align:center; cursor:pointer; background:var(--white); transition:border-color .15s, box-shadow .15s; }
+    .fragrow { margin-bottom:8px; }
+    .pick-hint { font-family:var(--font-title); font-size:11.5px; font-weight:500; color:var(--gray); }
+    /* trava do swatch quando o kit já tem fragrâncias definidas */
+    .frag-block.frag-locked .fragrow { opacity:0.4; pointer-events:none; filter:grayscale(0.4); }
+    .frag-kit-note { display:none; font-family:var(--font-title); font-size:12px; line-height:1.4; color:var(--pink-accent); background:var(--pink-soft); border-radius:var(--radius-sm); padding:10px 12px; margin-bottom:22px; }
+    .frag-kit-note b { color:var(--pink-accent); }
+    .frag-block:not(.frag-locked) .fragrow { margin-bottom:22px; }
+
+    .bundle { display:grid; grid-template-columns:repeat(2,1fr); gap:11px; margin-bottom:4px; }
+    .bundle-card { position:relative; min-width:0; display:flex; flex-direction:column; align-items:center; border:1.5px solid var(--gray-light); border-radius:var(--radius-md); padding:18px 12px 14px; text-align:center; cursor:pointer; background:var(--white); transition:border-color .15s, box-shadow .15s; }
     .bundle-card.selected { border-color:var(--pink-fluor); box-shadow:0 6px 20px rgba(245,10,120,0.14); }
-    .bundle-save { position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--pink-fluor); color:#fff; font-family:var(--font-title); font-size:9.5px; font-weight:800; letter-spacing:0.03em; padding:3px 8px; border-radius:20px; white-space:nowrap; }
-    .bundle-img { width:48px; height:48px; margin:4px auto 8px; object-fit:contain; }
-    .bundle-qty { display:block; font-family:var(--font-title); font-size:14px; font-weight:800; color:var(--dark); }
-    .bundle-old { display:block; font-family:var(--font-title); font-size:11px; color:var(--gray); text-decoration:line-through; margin-top:4px; }
-    .bundle-now { display:block; font-family:var(--font-title); font-size:13px; font-weight:800; color:var(--pink-fluor); }
-    .bundle-unit { display:block; font-family:var(--font-title); font-size:10px; color:var(--gray); }
+    .bundle-save { position:absolute; top:-10px; left:12px; background:var(--pink-fluor); color:#fff; font-family:var(--font-title); font-size:9.5px; font-weight:800; letter-spacing:0.03em; padding:3px 8px; border-radius:20px; white-space:nowrap; }
+    .bundle-badge { position:absolute; top:-10px; right:12px; background:var(--dark); color:#fff; font-family:var(--font-title); font-size:8.5px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; padding:3px 7px; border-radius:20px; white-space:nowrap; }
+    .bundle-ph { width:100%; aspect-ratio:16/10; border-radius:var(--radius-sm); background:linear-gradient(160deg,var(--pink-soft),var(--pink-light)); margin:4px 0 10px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .bundle-ph img { width:100%; height:100%; object-fit:contain; }
+    .bundle-ph small { font-family:var(--font-title); font-size:8.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--pink-mid); padding:0 6px; }
+    .bundle-qty { display:block; font-family:var(--font-title); font-size:15px; font-weight:800; color:var(--dark); }
+    .bundle-frags { display:block; font-family:var(--font-body); font-size:11px; line-height:1.3; color:#5a545a; margin:3px 0 9px; min-height:29px; }
+    .bundle-old { display:block; font-family:var(--font-title); font-size:11px; color:var(--gray); text-decoration:line-through; }
+    .bundle-now { display:block; font-family:var(--font-title); font-size:17px; font-weight:800; color:var(--pink-fluor); letter-spacing:-0.01em; }
+    .bundle-unit { display:block; font-family:var(--font-title); font-size:10px; color:var(--gray); margin-top:1px; }
     .buy-cta { margin-top:16px; }
     .stock { display:flex; align-items:center; justify-content:center; gap:8px; margin:14px 0 0; font-family:var(--font-title); font-size:12.5px; color:#5a545a; }
     .stock .dotgreen { width:9px; height:9px; border-radius:50%; background:#1A8A3C; flex-shrink:0; }
@@ -362,8 +363,8 @@
         <p class="pdp-rating"><span class="stars" aria-label="4.8 de 5">★★★★★</span> 4.8/5 · 1.847 avaliações</p>
         <p class="pdp-eyebrow">Edição limitada</p>
         <h1>Body Splash <em>Hidrabene</em></h1>
-        <div class="pdp-price"><span class="now">R$ XX,XX</span><span class="old">R$ XX,XX</span><span class="save">Economize XX%</span></div>
-        <p class="pdp-pricenote">Preço em breve</p>
+        <div class="pdp-price"><span class="now">R$ 39,90</span><span class="old">R$ 46,22</span><span class="save">Economize 14%</span></div>
+        <p class="pdp-pricenote">Nos kits, até R$ 27,47 a unidade</p>
         <p class="pdp-sub">Cheiro de perfume caro, sem aquele estouro de álcool — e com fixação acima da média de um body splash. Inspirações fiéis aos importados que você ama.</p>
         <ul class="pdp-checks">
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Você sente a fragrância na primeira borrifada, sem cheiro de álcool</li>
@@ -372,35 +373,51 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Dermatologicamente testado · cruelty free e vegano</li>
         </ul>
 
-        <!-- 1. fragrância -->
-        <p class="pick-label">1. Escolha a fragrância: <span id="fragChosen">selecione</span></p>
-        <div class="fragrow swatches" role="group" aria-label="Escolha a fragrância">
-          <button class="swatch" data-frag="Charm Way" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-charmway.webp')"></span><small>Charm Way</small></button>
-          <button class="swatch" data-frag="Iconic Fame" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-fame.webp')"></span><small>Iconic Fame</small></button>
-          <button class="swatch" data-frag="Velvet Vanilla" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-velvet.webp')"></span><small>Velvet Vanilla</small></button>
-          <button class="swatch" data-frag="Fine Bloom" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-bloom.webp')"></span><small>Fine Bloom</small></button>
+        <!-- 1. fragrância (só vale para o kit de 1 unidade) -->
+        <div class="frag-block" id="fragBlock">
+          <p class="pick-label">1. Escolha a fragrância <span class="pick-hint">— kit de 1 unidade · <span id="fragChosen">selecione</span></span></p>
+          <div class="fragrow swatches" role="group" aria-label="Escolha a fragrância">
+            <button class="swatch" data-frag="Charm Way" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-charmway.webp')"></span><small>Charm Way</small></button>
+            <button class="swatch" data-frag="Iconic Fame" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-fame.webp')"></span><small>Iconic Fame</small></button>
+            <button class="swatch" data-frag="Velvet Vanilla" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-velvet.webp')"></span><small>Velvet Vanilla</small></button>
+            <button class="swatch" data-frag="Fine Bloom" aria-pressed="false"><span class="dot" style="background-image:url('./assets/images/frag-bloom.webp')"></span><small>Fine Bloom</small></button>
+          </div>
+          <p class="frag-kit-note" id="fragKitNote"></p>
         </div>
 
         <!-- 2. kit (bundle compacto, selecionável) -->
         <p class="pick-label">2. Escolha o kit</p>
         <div class="bundle" role="group" aria-label="Escolha o kit">
           <button class="bundle-card" data-kit="1-unidade" onclick="selKit(this)">
-            <span class="bundle-save">-XX%</span>
-            <img class="bundle-img" src="./assets/images/mockup-charmway.webp" alt="" width="48" height="48" loading="lazy" />
-            <span class="bundle-qty">1 un</span>
-            <span class="bundle-old">R$ XX,XX</span><span class="bundle-now">R$ XX,XX</span><span class="bundle-unit">por unidade</span>
+            <span class="bundle-save">-14%</span>
+            <span class="bundle-ph"><img id="bundleSingleImg" src="./assets/images/mockup-charmway.webp" alt="Body Splash — 1 unidade" width="160" height="100" loading="lazy" /></span>
+            <span class="bundle-qty">1 unidade</span>
+            <span class="bundle-frags">Fragrância à sua escolha</span>
+            <span class="bundle-old">R$ 46,22</span><span class="bundle-now">R$ 39,90</span><span class="bundle-unit">R$ 39,90/un</span>
           </button>
           <button class="bundle-card" data-kit="2-unidades" onclick="selKit(this)">
-            <span class="bundle-save">-XX%</span>
-            <img class="bundle-img" src="./assets/images/mockup-velvet.webp" alt="" width="48" height="48" loading="lazy" />
-            <span class="bundle-qty">2 un</span>
-            <span class="bundle-old">R$ XX,XX</span><span class="bundle-now">R$ XX,XX</span><span class="bundle-unit">/un</span>
+            <span class="bundle-save">-24%</span>
+            <!-- TODO: trocar pelo mockup do kit 2 un quando chegar -->
+            <span class="bundle-ph" data-kit-mockup="2-unidades"><small>Mockup<br>em breve</small></span>
+            <span class="bundle-qty">2 unidades</span>
+            <span class="bundle-frags">Velvet Vanilla + Iconic Fame</span>
+            <span class="bundle-old">R$ 92,44</span><span class="bundle-now">R$ 69,90</span><span class="bundle-unit">R$ 34,95/un</span>
           </button>
-          <button class="bundle-card selected" data-kit="3-unidades" onclick="selKit(this)" aria-pressed="true">
-            <span class="bundle-save">-XX%</span>
-            <img class="bundle-img" src="./assets/images/mockup-fame.webp" alt="" width="48" height="48" loading="lazy" />
-            <span class="bundle-qty">3 un</span>
-            <span class="bundle-old">R$ XX,XX</span><span class="bundle-now">R$ XX,XX</span><span class="bundle-unit">/un</span>
+          <button class="bundle-card selected featured" data-kit="3-unidades" onclick="selKit(this)" aria-pressed="true">
+            <span class="bundle-save">-35%</span><span class="bundle-badge">Mais vendido</span>
+            <!-- TODO: trocar pelo mockup do kit 3 un quando chegar -->
+            <span class="bundle-ph" data-kit-mockup="3-unidades"><small>Mockup<br>em breve</small></span>
+            <span class="bundle-qty">3 unidades</span>
+            <span class="bundle-frags">Velvet Vanilla + Charm Way + Iconic Fame</span>
+            <span class="bundle-old">R$ 138,66</span><span class="bundle-now">R$ 89,90</span><span class="bundle-unit">R$ 29,96/un</span>
+          </button>
+          <button class="bundle-card" data-kit="4-unidades" onclick="selKit(this)">
+            <span class="bundle-save">-41%</span><span class="bundle-badge">Melhor custo</span>
+            <!-- TODO: trocar pelo mockup do kit 4 un quando chegar -->
+            <span class="bundle-ph" data-kit-mockup="4-unidades"><small>Mockup<br>em breve</small></span>
+            <span class="bundle-qty">4 unidades</span>
+            <span class="bundle-frags">A coleção completa — as 4 fragrâncias</span>
+            <span class="bundle-old">R$ 184,88</span><span class="bundle-now">R$ 109,90</span><span class="bundle-unit">R$ 27,47/un</span>
           </button>
         </div>
 
@@ -486,40 +503,44 @@
       <p class="lead">Quatro fragrâncias, quatro personalidades. Todas com a mesma fórmula que reduz o álcool e fixa acima da média.</p>
     </div>
     <div class="frag-scroll" role="list">
-      <div class="frag-card" role="listitem">
-        <div class="frag-photo"><img src="./assets/images/mockup-charmway.webp" alt="Body Splash Charm Way" width="900" height="900" loading="lazy" /></div>
+      <div class="frag-card" role="listitem" style="--fc:var(--charm);">
+        <div class="frag-photo"><span class="frag-color-dot"></span><img src="./assets/images/mockup-charmway.webp" alt="Body Splash Charm Way" width="900" height="900" loading="lazy" /></div>
         <div class="frag-body">
           <span class="frag-tag" style="background:var(--charm);color:#5a2e16;">Floral · Cítrico · Amadeirado</span>
           <p class="frag-name">Charm Way</p>
           <p class="frag-insp">Inspiração: My Way (Giorgio Armani)</p>
           <p class="frag-notes"><b>Acordes:</b> bergamota, flor de laranjeira, jasmim e cedro. Sofisticado, feminino e elegante.</p>
+          <button class="frag-cta" onclick="queroEsse('Charm Way')">Quero esse <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
-      <div class="frag-card" role="listitem">
-        <div class="frag-photo"><img src="./assets/images/mockup-fame.webp" alt="Body Splash Iconic Fame" width="900" height="900" loading="lazy" /></div>
+      <div class="frag-card" role="listitem" style="--fc:var(--fame);">
+        <div class="frag-photo"><span class="frag-color-dot"></span><img src="./assets/images/mockup-fame.webp" alt="Body Splash Iconic Fame" width="900" height="900" loading="lazy" /></div>
         <div class="frag-body">
           <span class="frag-tag" style="background:var(--fame);color:#fff;">Floral · Frutal · Ambarado</span>
           <p class="frag-name">Iconic Fame</p>
           <p class="frag-insp">Inspiração: Fame (Paco Rabanne)</p>
           <p class="frag-notes"><b>Acordes:</b> manga, bergamota, jasmim, baunilha e sândalo. Doce sensual que chama atenção.</p>
+          <button class="frag-cta" onclick="queroEsse('Iconic Fame')">Quero esse <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
-      <div class="frag-card" role="listitem">
-        <div class="frag-photo"><img src="./assets/images/mockup-velvet.webp" alt="Body Splash Velvet Vanilla" width="900" height="900" loading="lazy" /></div>
+      <div class="frag-card" role="listitem" style="--fc:var(--velvet);">
+        <div class="frag-photo"><span class="frag-color-dot"></span><img src="./assets/images/mockup-velvet.webp" alt="Body Splash Velvet Vanilla" width="900" height="900" loading="lazy" /></div>
         <div class="frag-body">
           <span class="frag-tag" style="background:var(--velvet);color:#5a4a1e;">Gourmand · Baunilha</span>
           <p class="frag-name">Velvet Vanilla</p>
           <p class="frag-insp">Inspiração: Bare Vanilla (Victoria's Secret)</p>
           <p class="frag-notes"><b>Acordes:</b> creme de baunilha, açúcar mascavo e musk. O doce mais aconchegante e viciante da linha.</p>
+          <button class="frag-cta" onclick="queroEsse('Velvet Vanilla')">Quero esse <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
-      <div class="frag-card" role="listitem">
-        <div class="frag-photo"><img src="./assets/images/mockup-bloom.webp" alt="Body Splash Fine Bloom" width="900" height="900" loading="lazy" /></div>
+      <div class="frag-card" role="listitem" style="--fc:var(--bloom);">
+        <div class="frag-photo"><span class="frag-color-dot"></span><img src="./assets/images/mockup-bloom.webp" alt="Body Splash Fine Bloom" width="900" height="900" loading="lazy" /></div>
         <div class="frag-body">
           <span class="frag-tag" style="background:var(--bloom);color:#1e4250;">Floral Aquático</span>
           <p class="frag-name">Fine Bloom</p>
           <p class="frag-insp">Fragrância autoral exclusiva</p>
           <p class="frag-notes"><b>Acordes:</b> pera, jasmim, pétalas delicadas e cedro branco. Frescor de "saída de banho de rica", zero doce.</p>
+          <button class="frag-cta" onclick="queroEsse('Fine Bloom')">Quero esse <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
     </div>
@@ -581,22 +602,6 @@
         <div class="ctable-us"><span class="ck">De body splash</span></div>
         <div class="ctable-them">De body splash</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ░░ ESPECIALISTA / MARCA ░░ -->
-  <section class="expert" aria-label="Sobre a fórmula">
-    <h2>Por que a <em>Hidrabene</em> conseguiu chegar nesse cheiro</h2>
-    <p>A Hidrabene Derma desenvolve dermocosméticos há anos, com formulação própria e controle de qualidade. O Body Splash nasceu de um pedido simples das clientes: "quero o cheiro do importado, mas sem o preço e sem o álcool".</p>
-    <p>Nesse vídeo, a gente mostra:</p>
-    <ul>
-      <li>Como a matéria-prima reduz a saída alcoólica da fórmula</li>
-      <li>Por que as inspirações ficaram tão fiéis aos originais</li>
-      <li>O segredo da fixação acima da média num body splash</li>
-    </ul>
-    <div class="video-ph" role="img" aria-label="Vídeo em breve">
-      <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      <span class="vlabel">Vídeo — em breve</span>
     </div>
   </section>
 
@@ -673,25 +678,33 @@
     // Rolagem suave até a oferta
     function irParaOferta(){ document.getElementById('oferta').scrollIntoView({behavior:'smooth'}); }
 
-    // Seleção de fragrância
+    // Fragrâncias de cada kit (2/3/4 são combos fixos; 1 un é à escolha)
+    var kitFrags = {
+      '1-unidade': null,
+      '2-unidades': 'Velvet Vanilla + Iconic Fame',
+      '3-unidades': 'Velvet Vanilla + Charm Way + Iconic Fame',
+      '4-unidades': 'Charm Way + Iconic Fame + Velvet Vanilla + Fine Bloom'
+    };
+    var fragImg = { 'Charm Way':'charmway', 'Iconic Fame':'fame', 'Velvet Vanilla':'velvet', 'Fine Bloom':'bloom' };
+
+    // Seleção de fragrância (vale para o kit de 1 unidade)
     var fragSelecionada = null;
-    (function(){
-      var chosen = document.getElementById('fragChosen');
-      var heroImg = document.getElementById('heroImg');
-      var fragImg = { 'Charm Way':'charmway', 'Iconic Fame':'fame', 'Velvet Vanilla':'velvet', 'Fine Bloom':'bloom' };
-      document.querySelectorAll('.swatch').forEach(function(b){
-        b.addEventListener('click', function(){
-          document.querySelectorAll('.swatch').forEach(function(x){ x.classList.remove('selected'); x.setAttribute('aria-pressed','false'); });
-          b.classList.add('selected'); b.setAttribute('aria-pressed','true');
-          fragSelecionada = b.dataset.frag;
-          if(chosen){ chosen.textContent = fragSelecionada; chosen.style.color = 'var(--pink-accent)'; }
-          if(heroImg && fragImg[fragSelecionada]){
-            heroImg.src = './assets/images/frag-' + fragImg[fragSelecionada] + '.webp';
-            heroImg.alt = 'Body Splash Hidrabene ' + fragSelecionada;
-          }
-        });
+    document.querySelectorAll('.swatch').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.swatch').forEach(function(x){ x.classList.remove('selected'); x.setAttribute('aria-pressed','false'); });
+        b.classList.add('selected'); b.setAttribute('aria-pressed','true');
+        fragSelecionada = b.dataset.frag;
+        var chosen = document.getElementById('fragChosen');
+        if(chosen){ chosen.textContent = fragSelecionada; chosen.style.color = 'var(--pink-accent)'; }
+        var key = fragImg[fragSelecionada];
+        if(key){
+          var heroImg = document.getElementById('heroImg');
+          if(heroImg){ heroImg.src = './assets/images/frag-' + key + '.webp'; heroImg.alt = 'Body Splash Hidrabene ' + fragSelecionada; }
+          var single = document.getElementById('bundleSingleImg');
+          if(single){ single.src = './assets/images/mockup-' + key + '.webp'; single.alt = 'Body Splash ' + fragSelecionada + ' — 1 unidade'; }
+        }
       });
-    })();
+    });
 
     // Seleção de kit (bundle)
     var kitSelecionado = '3-unidades';
@@ -699,23 +712,49 @@
       document.querySelectorAll('.bundle-card').forEach(function(x){ x.classList.remove('selected'); x.setAttribute('aria-pressed','false'); });
       btn.classList.add('selected'); btn.setAttribute('aria-pressed','true');
       kitSelecionado = btn.dataset.kit;
+      atualizarFragUI();
+    }
+
+    // Trava o seletor de fragrância quando o kit já tem combo fixo
+    function atualizarFragUI(){
+      var single = (kitSelecionado === '1-unidade');
+      var block = document.getElementById('fragBlock');
+      var note = document.getElementById('fragKitNote');
+      if(block){ block.classList.toggle('frag-locked', !single); }
+      if(note){
+        if(single){ note.style.display = 'none'; note.innerHTML = ''; }
+        else { note.style.display = 'block'; note.innerHTML = 'Este kit já vem com: <b>' + kitFrags[kitSelecionado] + '</b>'; }
+      }
+    }
+
+    // "Quero esse" no carrossel → kit de 1 un com a fragrância escolhida e rola pra oferta
+    function queroEsse(frag){
+      var kitBtn = document.querySelector('.bundle-card[data-kit="1-unidade"]');
+      if(kitBtn){ selKit(kitBtn); }
+      var sw = document.querySelector('.swatch[data-frag="' + frag + '"]');
+      if(sw){ sw.click(); }
+      irParaOferta();
     }
 
     // Checkout — colar o link em CHECKOUT_URL quando tiver
     var CHECKOUT_URL = ''; // ex: 'https://checkout.hidrabene.com.br/body-splash'
     function comprarAgora(){
-      if(!fragSelecionada){
-        document.querySelector('.fragrow').scrollIntoView({behavior:'smooth', block:'center'});
+      if(kitSelecionado === '1-unidade' && !fragSelecionada){
+        document.getElementById('fragBlock').scrollIntoView({behavior:'smooth', block:'center'});
         alert('Escolha primeiro a fragrância do seu Body Splash.');
         return;
       }
+      var frag = (kitSelecionado === '1-unidade') ? fragSelecionada : kitFrags[kitSelecionado];
       if(CHECKOUT_URL){
         var sep = CHECKOUT_URL.includes('?') ? '&' : '?';
-        window.location.href = CHECKOUT_URL + sep + 'kit=' + encodeURIComponent(kitSelecionado) + '&fragrancia=' + encodeURIComponent(fragSelecionada);
+        window.location.href = CHECKOUT_URL + sep + 'kit=' + encodeURIComponent(kitSelecionado) + '&fragrancia=' + encodeURIComponent(frag);
         return;
       }
-      alert('Body Splash Hidrabene\nFragrância: ' + fragSelecionada + '\nKit: ' + kitSelecionado + '\n\nO link do checkout será configurado em CHECKOUT_URL.');
+      alert('Body Splash Hidrabene\nKit: ' + kitSelecionado + '\nFragrância(s): ' + frag + '\n\nO link do checkout será configurado em CHECKOUT_URL.');
     }
+
+    // Estado inicial (kit padrão = 3 un → seletor de fragrância travado)
+    atualizarFragUI();
 
         // FAQ accordion
     function toggleFaq(btn){
