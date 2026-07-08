@@ -771,6 +771,20 @@
       irParaOferta();
     }
 
+    // Repassa as UTMs da página atual pro link de checkout (Yampi não herda automaticamente)
+    function withUtms(url) {
+      try {
+        var u = new URL(url);
+        var current = new URLSearchParams(window.location.search);
+        current.forEach(function(value, key) {
+          if (!u.searchParams.has(key)) u.searchParams.set(key, value);
+        });
+        return u.toString();
+      } catch (e) {
+        return url;
+      }
+    }
+
     // Checkout Yampi — 1 un: link por fragrância; kits 2/3/4: link por kit
     var CHECKOUT_UNIT = {
       'Charm Way':      'https://hidrabene.pay.yampi.com.br/r/75CNXY9QZL',
@@ -791,10 +805,10 @@
           return;
         }
         var u = CHECKOUT_UNIT[fragSelecionada];
-        if(u){ window.location.href = u; return; }
+        if(u){ window.location.href = withUtms(u); return; }
       } else {
         var k = CHECKOUT_KIT[kitSelecionado];
-        if(k){ window.location.href = k; return; }
+        if(k){ window.location.href = withUtms(k); return; }
       }
       alert('Body Splash Hidrabene\nKit: ' + kitSelecionado + '\n\nLink de checkout não configurado para esta opção.');
     }
